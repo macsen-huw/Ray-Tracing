@@ -66,13 +66,10 @@ class RenderController : public QObject
     void zTranslateChanged(int value);
 
     // slots for responding to check boxes
-    void fresnelRenderingCheckChanged(int state);
     void phongShadingCheckChanged(int state);
     void interpolationCheckChanged(int state);
     void shadowBoxCheckChanged(int state);
     void reflectionBoxChanged(int state);
-    void refractionBoxChanged(int state);
-    void monteCarloBoxChanged(int state);
     void orthographicBoxChanged(int state);
 
     //slots respoding to the push button

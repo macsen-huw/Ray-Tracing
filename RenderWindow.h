@@ -60,11 +60,8 @@ class RenderWindow : public QWidget
     // check boxes to control render options
     QCheckBox                   *interpolationBox;
     QCheckBox                   *phongshadingBox;
-    QCheckBox                   *fresnelRenderingBox;
     QCheckBox                   *shadowBox;
     QCheckBox                   *reflectionBox;
-    QCheckBox                   *refractionBox;
-    QCheckBox                   *monteCarloBox;
 
     // check boxes for modelling options
     QCheckBox                   *centreObjectBox;

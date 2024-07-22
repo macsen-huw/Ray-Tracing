@@ -59,13 +59,10 @@ RenderWindow::RenderWindow
 
     // construct standard QT widgets
     // check boxes
-    fresnelRenderingBox     = new QCheckBox                 ("Fresnel",            this);
     interpolationBox     = new QCheckBox                 ("Interpolation",            this);
     phongshadingBox      = new QCheckBox                 ("Phong",            this);
     shadowBox            = new QCheckBox                 ("Shadow",            this);
     reflectionBox        = new QCheckBox                 ("Reflection",            this);
-    refractionBox        = new QCheckBox                 ("Refraction",            this);
-    monteCarloBox        = new QCheckBox                 ("Monte-Carlo",            this);
     orthographicBox      = new QCheckBox                 ("Orthographic",           this);
 
     // spatial sliders
@@ -77,14 +74,10 @@ RenderWindow::RenderWindow
     //push buttons
     raytraceButton      = new QPushButton               ("Raytrace", this);
 
-
-
     // labels for sliders and arcballs
     modelRotatorLabel           = new QLabel                    ("Model",               this);
     yTranslateLabel             = new QLabel                    ("Y",                   this);
     zoomLabel                   = new QLabel                    ("Zm",                  this);
-
-
 
     // add all of the widgets to the grid               Row         Column      Row Span    Column Span
 
@@ -103,10 +96,7 @@ RenderWindow::RenderWindow
     windowLayout->addWidget(phongshadingBox,            3,         3,          1,          1           );
     windowLayout->addWidget(shadowBox,                  4,         3,          1,          1           );
     windowLayout->addWidget(reflectionBox,              5,         3,          1,          1           );
-    windowLayout->addWidget(refractionBox,              6,         3,          1,          1           );
-    windowLayout->addWidget(fresnelRenderingBox,       7,         3,          1,          1           );
-    windowLayout->addWidget(monteCarloBox,              8,         3,          1,          1           );
-    windowLayout->addWidget(orthographicBox,            9,          3,          1,          1          );
+    windowLayout->addWidget(orthographicBox,            6,          3,          1,          1          );
 
     // Translate Slider Row
     windowLayout->addWidget(xTranslateSlider,           nStacked,   1,          1,          1           );
@@ -129,14 +119,10 @@ RenderWindow::RenderWindow
 void RenderWindow::ResetInterface()
     { // RenderWindow::ResetInterface()
     // set check boxes
-    fresnelRenderingBox    ->setChecked        (renderParameters   ->  fresnelRendering);
     interpolationBox    ->setChecked        (renderParameters   ->  interpolationRendering);
     shadowBox    ->setChecked        (renderParameters   ->  shadowsEnabled);
     phongshadingBox    ->setChecked        (renderParameters   ->  phongEnabled);
     reflectionBox    ->setChecked        (renderParameters   ->  reflectionEnabled);
-    refractionBox    ->setChecked        (renderParameters   ->  refractionEnabled);
-    monteCarloBox    ->setChecked        (renderParameters   ->  monteCarloEnabled);
-
 
     // set sliders
     // x & y translate are scaled to notional unit sphere in render widgets
@@ -168,14 +154,11 @@ void RenderWindow::ResetInterface()
     secondXTranslateSlider  ->update();
     yTranslateSlider        ->update();
     zTranslateSlider        ->update();
-    fresnelRenderingBox     ->update();
     interpolationBox        ->update();
     phongshadingBox         ->update();
     interpolationBox        ->update();
     shadowBox               ->update();
     reflectionBox           ->update();
-    refractionBox           ->update();
-    monteCarloBox           ->update();
 
     } // RenderWindow::ResetInterface()
 

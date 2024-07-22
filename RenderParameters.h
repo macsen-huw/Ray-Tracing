@@ -48,11 +48,8 @@ class RenderParameters
     // and the booleans
     bool interpolationRendering;
     bool phongEnabled;
-    bool fresnelRendering;
     bool shadowsEnabled;
     bool reflectionEnabled;
-    bool refractionEnabled;
-    bool monteCarloEnabled;
 
     bool centreObject;
 
@@ -67,11 +64,9 @@ class RenderParameters
         zTranslate(0.0),
         interpolationRendering(false),
         phongEnabled(false),
-        fresnelRendering(false),
         shadowsEnabled(false),
         reflectionEnabled(false),
-        refractionEnabled(false),
-        monteCarloEnabled(false),
+
         centreObject(false),
         orthoProjection(false)
         { // constructor

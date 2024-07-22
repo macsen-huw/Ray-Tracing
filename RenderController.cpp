@@ -72,8 +72,6 @@ RenderController::RenderController
 
 
     // signal for check box
-    QObject::connect(   renderWindow->fresnelRenderingBox,         SIGNAL(stateChanged(int)),
-                        this,                                       SLOT(fresnelRenderingCheckChanged(int)));
     QObject::connect(   renderWindow->phongshadingBox,              SIGNAL(stateChanged(int)),
                         this,                                       SLOT(phongShadingCheckChanged(int)));
     QObject::connect(   renderWindow->interpolationBox,             SIGNAL(stateChanged(int)),
@@ -82,11 +80,6 @@ RenderController::RenderController
                         this,                                       SLOT(shadowBoxCheckChanged(int)));
     QObject::connect(   renderWindow->reflectionBox,                SIGNAL(stateChanged(int)),
                         this,                                       SLOT(reflectionBoxChanged(int)));
-    QObject::connect(   renderWindow->refractionBox,                SIGNAL(stateChanged(int)),
-                        this,                                       SLOT(refractionBoxChanged(int)));
-    QObject::connect(   renderWindow->monteCarloBox,                SIGNAL(stateChanged(int)),
-                        this,                                       SLOT(monteCarloBoxChanged(int)));
-
     QObject::connect( renderWindow->orthographicBox,                SIGNAL(stateChanged(int)),
                        this,                                        SLOT(orthographicBoxChanged(int)));
     //Signal for push button
@@ -159,16 +152,6 @@ void RenderController::zTranslateChanged(int value)
     } // RenderController::xTranslateChanged()
 
 
-void RenderController::fresnelRenderingCheckChanged(int state)
-    {
-    // reset the model's flag
-    renderParameters->fresnelRendering = (state == Qt::Checked);
-
-    // reset the interface
-    renderWindow->ResetInterface();
-    }
-
-
 void RenderController::phongShadingCheckChanged(int state)
     {
     // reset the model's flag
@@ -200,24 +183,6 @@ void RenderController::reflectionBoxChanged(int state)
     {
     // reset the model's flag
     renderParameters->reflectionEnabled = (state == Qt::Checked);
-
-    // reset the interface
-    renderWindow->ResetInterface();
-    }
-
-void RenderController::refractionBoxChanged(int state)
-    {
-    // reset the model's flag
-    renderParameters->refractionEnabled = (state == Qt::Checked);
-
-    // reset the interface
-    renderWindow->ResetInterface();
-    }
-
-void RenderController::monteCarloBoxChanged(int state)
-    {
-    // reset the model's flag
-    renderParameters->monteCarloEnabled = (state == Qt::Checked);
 
     // reset the interface
     renderWindow->ResetInterface();
